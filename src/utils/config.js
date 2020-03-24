@@ -1,33 +1,31 @@
-const menuGlobal=[
+const menuGlobal = [
     {
-        id:'aaa',
-        pid:'0',
-        name:'aaa页',
-        icon:'user',
+        id: 'index',
+        pid: '0',
+        name: '购物车',
+        icon: 'user',
         path: '/',
-        // models: () => [import('../models/aaa')], //models可多个
-        component: () => import('../pages/aaa'),
-    }, 
-    {
-        id:'bbb',
-        pid:'0',
-        name:'bbb页',
-        icon:'user',
-        path: '/aaa/bbb',
-        // models: () => [import('../models/bbb')], //models可多个
-        component: () => import('../pages/bbb'),
-    }, 
-    {
-        id:'ccc',
-        pid:'0',
-        name:'ccc页',
-        icon:'user',
-        path: '/ccc',
-        // models: () => [import('../models/ccc')], //models可多个
-        component: () => import('../pages/ccc'),
-    }, 
-  ];
-  
+        models: () => [import('../models/cart')], //models可多个
+        component: () => import('../pages/index'),
+    },
+    // {
+    //     id:'bbb',
+    //     pid:'0',
+    //     name:'bbb页',
+    //     icon:'user',
+    //     path: '/aaa/bbb',
+    //     component: () => import('../pages/bbb'),
+    // }, 
+    // {
+    //     id:'ccc',
+    //     pid:'0',
+    //     name:'ccc页',
+    //     icon:'user',
+    //     path: '/ccc',
+    //     component: () => import('../pages/ccc'),
+    // }, 
+];
+
 export default {
     menuGlobal
 }
