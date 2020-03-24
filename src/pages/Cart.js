@@ -131,7 +131,7 @@ class Cart extends Component {
 
     total = (arr) => {
         let total = []
-        arr.forEach(element => {
+        arr&&arr.forEach(element => {
             total.push(element.price * element.count)
         })
 
@@ -165,7 +165,7 @@ class Cart extends Component {
                 {
                     visible ? '' :
                         <div onClick={this.showDrawer}>
-                            <Quantity count={local.length} />
+                            <Quantity count={local&&local.length||'0'} />
                         </div>
                 }
                 <Drawer
@@ -177,10 +177,10 @@ class Cart extends Component {
                     bodyStyle={{ background: '#1b1a20', position: 'relative' }}
                 >
                     <div className='title'>
-                        <Quantity title='Cart' count={local.length} />
+                        <Quantity title='Cart' count={local&&local.length||'0'} />
                     </div>
                     {
-                        local.map(item =>
+                        local&&local.map(item =>
                             <div className="products" key={item.id} style={{ width: '100%', color: '#fff', fontSize: 16, marginBottom: 10 }}>
                                 <Row gutter={12}>
                                     <Col span={5}><img src={require(`../static/products/${item.sku}_1.jpg`)} alt="" style={{ width: '100%', verticalAlign: 'middle' }} /></Col>
@@ -210,7 +210,7 @@ class Cart extends Component {
                         <Row justify='space-around'>
                             <Col style={{ fontSize: 16 }}>SUBTOTAL</Col>
                             <Col style={{ textAlign: 'right' }}>
-                                <p className='price' style={{ fontSize: 22 }}>$ {this.total(local)}</p>
+                                <p className='price' style={{ fontSize: 22 }}>$ {this.total(local&&local)}</p>
                             </Col>
                         </Row>
                         <div style={{ textAlign: 'center', marginTop: 40 }}>

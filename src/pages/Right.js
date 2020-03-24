@@ -28,7 +28,7 @@ class Right extends Component {
         return (
             <div className='right'>
                 <Row justify='space-between'>
-                    <Col xs={24} sm={24} md={12} lg={12} xl={12}>{local.length} Product(s) found.</Col>
+                    <Col xs={24} sm={24} md={12} lg={12} xl={12}>{local&&local.length} Product(s) found.</Col>
                     <Col xs={24} sm={24} md={12} lg={12} xl={12} style={{ textAlign: 'right' }}>Order by
                     <Select defaultValue="noSelect" style={{ marginLeft: 10 }} onChange={this.handleChange}>
                             <Option value="noSelect">Select</Option>

@@ -13,7 +13,7 @@ import './index.css';
 import './style.less';
 import 'normalize.css';
 
-import createHistory from 'history/createBrowserHistory'
+import createHistory from 'history/createHashHistory'
 
 // 1. Initialize
 const app = dva({
